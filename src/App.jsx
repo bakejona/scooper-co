@@ -63,14 +63,14 @@ const App = () => {
       <style>
         {`
           /* Global Styles */
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=DM+Sans:wght@400;600;700;800&display=swap');
           
           * {
               box-sizing: border-box;
           }
           
           body {
-              font-family: 'Inter', sans-serif;
+              font-family: 'DM Sans', sans-serif;
               background-color: #fff;
               color: #2d3748;
               -webkit-font-smoothing: antialiased;
@@ -116,33 +116,35 @@ const App = () => {
               justify-content: space-between;
               align-items: center;
               background-color: #fff;
-              box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-              border-bottom-left-radius: 0.5rem;
-              border-bottom-right-radius: 0.5rem;
           }
           
           .nav-brand {
               font-size: 1.5rem;
               font-weight: 700;
-              color: #48bb78;
+              color: #058250;
               text-decoration: none;
+              font-family: 'Poppins', sans-serif;
           }
           
           .nav-links {
               display: flex;
               gap: 1.5rem;
               font-size: 1.125rem;
-              font-weight: 600;
-              color: #4a5568;
+              font-weight: 700;
+              color: #2d3748;
           }
           
           .nav-item {
               text-decoration: none;
               transition: color 0.3s ease-in-out;
+              font-weight: 600;
+              color: #2d3748;
+              
           }
           
           .nav-item:hover {
-              color: #48bb78;
+              color: #058250
+              ;
           }
           
           /* Sections */
@@ -151,11 +153,10 @@ const App = () => {
               height: 100vh;
               display: flex;
               align-items: center;
-              justify-content: center;
-              text-align: center;
+              text-align: left;
               color: #fff;
-              border-bottom-left-radius: 0.5rem;
-              border-bottom-right-radius: 0.5rem;
+              border-bottom-left-radius: 1rem;
+              border-bottom-right-radius: 1rem;
               background-size: cover;
               background-position: center;
           }
@@ -163,45 +164,55 @@ const App = () => {
           .hero-overlay {
               position: absolute;
               inset: 0;
-              background-color: rgba(0, 0, 0, 0.5);
-              border-bottom-left-radius: 0.5rem;
-              border-bottom-right-radius: 0.5rem;
+              background-color: rgba(0, 0, 0, 0.35);
+              border-bottom-left-radius: 1.5rem;
+              border-bottom-right-radius: 1.5rem;
           }
           
           .hero-content {
               z-index: 10;
-              padding: 0 1rem;
+              padding: 0 6rem;
           }
           
           .hero-title {
               font-size: 2.25rem;
               font-weight: 800;
               margin-bottom: 1rem;
+              font-family: 'Poppins', sans-serif;
+              
           }
           
           .hero-subtitle {
-              font-size: 1.125rem;
-              max-width: 42rem;
-              margin-left: auto;
+              max-width: 50rem;
               margin-right: auto;
               margin-bottom: 2rem;
+              font-weight: 700;
+
           }
           
-          .cta-button {
-              background-color: #38a169;
+            .cta-button {
+              background-color: #058250;
               color: #fff;
               font-weight: 700;
-              padding: 0.75rem 2rem;
+              padding: 0.75rem 1.25rem;
               border-radius: 9999px;
               box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
               transition: transform 0.3s ease-in-out;
               text-decoration: none;
-              display: inline-block;
+              display: inline-flex;
+              align-items: center;
           }
           
           .cta-button:hover {
               transform: scale(1.05);
               background-color: #2f855a;
+          }
+
+          .cta-button img {
+            margin-left: 0.5rem;
+            width: 24px;
+            height: 24px;
+            filter: invert(100%);
           }
           
           .services-section {
@@ -215,6 +226,7 @@ const App = () => {
               font-weight: 800;
               color: #2d3748;
               margin-bottom: 3rem;
+              font-family: 'Poppins', sans-serif;
           }
           
           .services-grid {
@@ -237,7 +249,7 @@ const App = () => {
           
           .service-icon {
               font-size: 2.25rem;
-              color: #48bb78;
+              color: #058250;
               margin-bottom: 1rem;
           }
           
@@ -245,6 +257,7 @@ const App = () => {
               font-size: 1.5rem;
               font-weight: 700;
               margin-bottom: 1rem;
+              font-family: 'Poppins', sans-serif;
           }
           
           .service-description {
@@ -252,31 +265,31 @@ const App = () => {
           }
           
           .about-section {
-              padding: 5rem 1.5rem;
+              padding: 3rem 5rem;
               background-color: #f7fafc;
               display: flex;
               flex-direction: column;
               align-items: center;
-              gap: 2.5rem;
+              gap: 2rem;
               text-align: center;
+              border-radius: 1.5rem;
+
           }
           
           .about-image-container {
-              width: 100%;
               border-radius: 0.5rem;
               overflow: hidden;
-              box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
               transition: transform 0.3s ease-in-out;
           }
           
-          .about-image-container:hover {
-              transform: scale(1.05);
-          }
+          
           
           .about-image {
-              width: 100%;
+              width: 75%;
               height: auto;
               object-fit: cover;
+              border-radius: 0.5rem;
+
           }
           
           .about-text-content {
@@ -336,12 +349,14 @@ const App = () => {
               -webkit-appearance: none;
               -moz-appearance: none;
               appearance: none;
+              background-color: #fff;
+              color: #2d3748;
           }
           
           .form-input:focus, .form-select:focus, .form-textarea:focus {
               outline: none;
-              border-color: #48bb78;
-              box-shadow: 0 0 0 2px rgba(72, 187, 120, 0.5);
+              border-color: #058250;
+              box-shadow: 0 0 0 2px rgba(72, 187, 120);
           }
           
           .form-label {
@@ -373,7 +388,7 @@ const App = () => {
           }
           
           .yard-size-item.selected {
-              border-color: #48bb78;
+              border-color: #058250;
               background-color: #e6ffed;
               box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
           }
@@ -392,7 +407,7 @@ const App = () => {
           
           .submit-button {
               width: 100%;
-              background-color: #38a169;
+              background-color: #058250;
               color: #fff;
               font-weight: 700;
               padding: 0.75rem 1.5rem;
@@ -472,13 +487,13 @@ const App = () => {
           </a>
           <div className="nav-links">
             <a href="#home" className="nav-item">
-              Home
+              home
             </a>
             <a href="#about" className="nav-item">
-              About
+              about
             </a>
             <a href="#contact" className="nav-item">
-              Contact
+              contact
             </a>
           </div>
         </nav>
@@ -488,21 +503,27 @@ const App = () => {
           id="home"
           className="hero-section"
           style={{
-            backgroundImage:
-              "url('https://placehold.co/1920x1080/000000/FFFFFF?text=Scooper+Co.+Hero+Image')",
+            backgroundImage: "url('/images/sc-hero.jpeg')",
           }}
         >
           <div className="hero-overlay"></div>
           <div className="hero-content">
             <h1 className="hero-title animate-fade-in-down">
-              The Dirty Work, Done.
+              Taking care of business,
+              <br /> so you don't have to.
             </h1>
             <p className="hero-subtitle animate-fade-in">
               Expert pet waste management to keep your yard clean, safe, and
               beautiful.
             </p>
             <a href="#contact" className="cta-button animate-fade-in-up">
-              Get a Free Quote!
+              Schedule a cleanup{" "}
+              <img
+                width="24"
+                height="24"
+                src="https://img.icons8.com/fluency-systems-regular/48/right--v1.png"
+                alt="right--v1"
+              />
             </a>
           </div>
         </section>
@@ -559,13 +580,13 @@ const App = () => {
         <section id="about" className="about-section">
           <div className="about-image-container">
             <img
-              src="https://placehold.co/800x600/6B46C1/FFFFFF?text=Landon+-+Scooper+Co.+Owner"
+              src="/images/sc-about.jpg"
               alt="Landon, owner of Scooper Co."
               className="about-image"
             />
           </div>
           <div className="about-text-content">
-            <h2 className="section-title">Our Story</h2>
+            <h2 className="section-title">Why choose Scooper Co?</h2>
             <p className="about-text">
               Hey there! I’m Landon — husband, dad of three awesome kids,
               veteran, Christian, and lifelong dog lover. I started Scooper Co.
