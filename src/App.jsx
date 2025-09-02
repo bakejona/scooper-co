@@ -24,6 +24,10 @@ const App = () => {
     setFormData((prevData) => ({ ...prevData, yardSize: size }));
   };
 
+  const handleDogCountClick = (count) => {
+    setFormData((prevData) => ({ ...prevData, dogs: count }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormStatus("sending");
