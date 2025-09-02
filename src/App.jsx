@@ -29,16 +29,15 @@ const App = () => {
     setFormStatus("sending");
 
     try {
-      // This is a placeholder for your email sending logic.
-      // For a real-world application, you would use a serverless function
-      // on Vercel (or a similar backend service) to handle this.
-      // The serverless function would take the formData, connect to an
-      // email service (like SendGrid, Nodemailer, etc.), and send the email.
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // We'll simulate a successful API call here.
-      const response = { status: 200 }; // Simulate a successful response
-
-      if (response.status === 200) {
+      if (response.ok) {
         setFormStatus("success");
         // Reset form after a successful submission
         setFormData({
@@ -66,6 +65,10 @@ const App = () => {
           /* Global Styles */
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
           
+          * {
+              box-sizing: border-box;
+          }
+          
           body {
               font-family: 'Inter', sans-serif;
               background-color: #fff;
@@ -75,6 +78,7 @@ const App = () => {
               scroll-behavior: smooth;
               margin: 0;
               padding: 0;
+              min-height: 100vh;
           }
 
           .app-container {
@@ -104,6 +108,7 @@ const App = () => {
           /* Navigation */
           .nav-bar {
               position: fixed;
+              top: 0;
               width: 100%;
               z-index: 50;
               padding: 1rem 1.5rem;
@@ -734,7 +739,7 @@ const App = () => {
               <div className="error-message">
                 <p>
                   There was an issue sending your request. Please try again
-                  later or contact us directly at Thescooperco@gmail.com.
+                  later or contact us directly at jbakerbba@gmail.com.
                 </p>
               </div>
             )}
