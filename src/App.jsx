@@ -163,7 +163,7 @@ const App = () => {
           
           .hero-overlay {
               position: absolute;
-              inset: 0;
+              inset: .125px;
               background-color: rgba(0, 0, 0, 0.35);
               border-bottom-left-radius: 1.5rem;
               border-bottom-right-radius: 1.5rem;
@@ -226,7 +226,7 @@ const App = () => {
               font-weight: 800;
               color: #2d3748;
               margin-bottom: 3rem;
-              font-family: 'Poppins', sans-serif;
+              
           }
           
           .services-grid {
@@ -366,7 +366,39 @@ const App = () => {
               font-weight: 700;
               margin-bottom: 0.5rem;
           }
-          
+          .dog-count-options {
+            display: flex;
+            justify-content: space-around;
+            gap: 1rem;
+            margin-top: 0.5rem;
+          }
+
+          .dog-count-item {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #4a5568;
+            border: 2px solid #e2e8f0;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+          }
+
+          .dog-count-item:hover {
+            background-color: #f7fafc;
+          }
+
+          .dog-count-item.selected {
+            border-color: #48bb78;
+            background-color: #e6ffed;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            color: #2f855a;
+          }
           .yard-size-options {
               display: flex;
               justify-content: space-around;
@@ -381,6 +413,11 @@ const App = () => {
               transition: all 0.2s ease-in-out;
               border: 2px solid #e2e8f0;
               background-color: #fff;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: flex-end;
+
           }
           
           .yard-size-item:hover {
@@ -402,6 +439,12 @@ const App = () => {
           .yard-size-label {
               font-size: 0.875rem;
               font-weight: 600;
+              color: #4a5568;
+          }
+
+          .yard-size-caption {
+              font-size: 0.75rem;
+              font-weight: 400;
               color: #4a5568;
           }
           
@@ -666,21 +709,43 @@ const App = () => {
                 <option value="routine">Routine Cleanup</option>
                 <option value="deodorizing">Yard Deodorizing</option>
               </select>
-              <select
-                name="dogs"
-                value={formData.dogs}
-                onChange={handleChange}
-                className="form-select"
-                required
-              >
-                <option value="" disabled>
-                  Number of Dogs
-                </option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4+">4+</option>
-              </select>
+              <div>
+                <label className="form-label">Number of Dogs</label>
+                <div className="dog-count-options">
+                  <div
+                    className={`dog-count-item ${
+                      formData.dogs === "1" ? "selected" : ""
+                    }`}
+                    onClick={() => handleDogCountClick("1")}
+                  >
+                    1
+                  </div>
+                  <div
+                    className={`dog-count-item ${
+                      formData.dogs === "2" ? "selected" : ""
+                    }`}
+                    onClick={() => handleDogCountClick("2")}
+                  >
+                    2
+                  </div>
+                  <div
+                    className={`dog-count-item ${
+                      formData.dogs === "3" ? "selected" : ""
+                    }`}
+                    onClick={() => handleDogCountClick("3")}
+                  >
+                    3
+                  </div>
+                  <div
+                    className={`dog-count-item ${
+                      formData.dogs === "4+" ? "selected" : ""
+                    }`}
+                    onClick={() => handleDogCountClick("4+")}
+                  >
+                    4+
+                  </div>
+                </div>
+              </div>
               <div>
                 <label className="form-label">Yard Size</label>
                 <div className="yard-size-options">
@@ -690,14 +755,15 @@ const App = () => {
                     }`}
                     onClick={() => handleYardSizeClick("small")}
                   >
-                    <span
-                      role="img"
-                      aria-label="Small Yard"
-                      className="yard-size-icon"
-                    >
-                      🤏
-                    </span>
+                    <img
+                      width="40"
+                      height="40"
+                      src="/public/images/grass.png"
+                      alt="grass"
+                    />
+                    <br />
                     <span className="yard-size-label">Small</span>
+                    <p className="yard-size-caption">under 5,000 sq ft</p>
                   </div>
                   <div
                     className={`yard-size-item ${
@@ -705,14 +771,15 @@ const App = () => {
                     }`}
                     onClick={() => handleYardSizeClick("medium")}
                   >
-                    <span
-                      role="img"
-                      aria-label="Medium Yard"
-                      className="yard-size-icon"
-                    >
-                      🏡
-                    </span>
+                    <img
+                      width="60"
+                      height="60"
+                      src="/public/images/grass.png"
+                      alt="grass"
+                    />
+                    <br />
                     <span className="yard-size-label">Medium</span>
+                    <p className="yard-size-caption">5,000 - 10,000 sq ft</p>
                   </div>
                   <div
                     className={`yard-size-item ${
@@ -720,14 +787,15 @@ const App = () => {
                     }`}
                     onClick={() => handleYardSizeClick("large")}
                   >
-                    <span
-                      role="img"
-                      aria-label="Large Yard"
-                      className="yard-size-icon"
-                    >
-                      🌳
-                    </span>
+                    <img
+                      width="80"
+                      height="80"
+                      src="/public/images/grass.png"
+                      alt="grass"
+                    />
+                    <br />
                     <span className="yard-size-label">Large</span>
+                    <p className="yard-size-caption">10,000+ sq ft</p>
                   </div>
                 </div>
               </div>
