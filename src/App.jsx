@@ -782,7 +782,7 @@ const App = () => {
                     <img
                       width="40"
                       height="40"
-                      src="/public/images/grass.png"
+                      src="/images/grass.png"
                       alt="grass"
                     />
                     <br />
@@ -798,7 +798,7 @@ const App = () => {
                     <img
                       width="60"
                       height="60"
-                      src="/public/images/grass.png"
+                      src="/images/grass.png"
                       alt="grass"
                     />
                     <br />
@@ -814,7 +814,7 @@ const App = () => {
                     <img
                       width="80"
                       height="80"
-                      src="/public/images/grass.png"
+                      src="/images/grass.png"
                       alt="grass"
                     />
                     <br />
