@@ -554,7 +554,6 @@ const App = () => {
           /* Desktop & up */
           @media (min-width: 1024px) {
             .app-container {
-                max-width: 1440px;
                 margin: 0 auto;
                 padding: 0;
             }
