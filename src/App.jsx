@@ -81,12 +81,14 @@ const App = () => {
               -moz-osx-font-smoothing: grayscale;
               scroll-behavior: smooth;
               margin: 0;
-              padding: 0;
-              min-height: 100vh;
-          }
-
-          .app-container {
               padding-top: 5rem;
+              min-height: 100vh;
+              max-width: 100vw;
+              overflow-x: hidden;
+          }
+          
+          .app-container {
+              padding: 0;
           }
           
           /* Animations */
@@ -420,9 +422,10 @@ const App = () => {
             color: #2f855a;
           }
           .yard-size-options {
-              display: flex;
+               display: flex;
+              flex-direction: column;
               justify-content: space-around;
-              gap: 1rem;
+              gap: 1rem;  
           }
           
           .yard-size-item {
@@ -543,6 +546,9 @@ const App = () => {
               .form-grid {
                   grid-template-columns: repeat(2, 1fr);
               }
+              .yard-size-options {
+                flex-direction: row;
+              }
           }
 
           /* Desktop & up */
@@ -569,7 +575,7 @@ const App = () => {
                 width: 75%;
             }
             .about-logo {
-                width: 100px;
+                width: 150px;
             }
           }
         `}
