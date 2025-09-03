@@ -164,6 +164,16 @@ const App = () => {
               background-size: cover;
               background-position: center;
           }
+
+          .section-hr {
+            width: 50%;
+            height: 5px;
+            background-color: #058250;
+            border: none;
+            margin-top: -30px;
+            
+            
+          }
           
           .hero-overlay {
               position: absolute;
@@ -582,9 +592,12 @@ const App = () => {
             {/* One-Time Cleanups */}
             <div className="service-card">
               <div className="service-icon">
-                <span role="img" aria-label="One-Time Cleanup">
-                  🧹
-                </span>
+                <img
+                  src="/images/trash.png" // Path to your one-time cleanup image
+                  alt="One-Time Cleanup"
+                  width="40" // Set the desired width
+                  height="40" // Set the desired height
+                />
               </div>
               <h3 className="service-title">One-Time Cleanups</h3>
               <p className="service-description">
@@ -596,9 +609,12 @@ const App = () => {
             {/* Routine Cleanups */}
             <div className="service-card">
               <div className="service-icon">
-                <span role="img" aria-label="Routine Cleanup">
-                  🗓️
-                </span>
+                <img
+                  src="/images/schedule.png" // Path to your routine cleanup image
+                  alt="Routine Cleanup"
+                  width="40" // Set the desired width
+                  height="40" // Set the desired height
+                />
               </div>
               <h3 className="service-title">Routine Cleanups</h3>
               <p className="service-description">
@@ -610,9 +626,12 @@ const App = () => {
             {/* Yard Deodorizing */}
             <div className="service-card">
               <div className="service-icon">
-                <span role="img" aria-label="Deodorizing">
-                  👃
-                </span>
+                <img
+                  src="/images/nose.png" // Path to your yard deodorizing image
+                  alt="Yard Deodorizing"
+                  width="40" // Set the desired width
+                  height="40" // Set the desired height
+                />
               </div>
               <h3 className="service-title">Yard Deodorizing</h3>
               <p className="service-description">
@@ -634,6 +653,7 @@ const App = () => {
           </div>
           <div className="about-text-content">
             <h2 className="section-title">Why choose Scooper Co?</h2>
+            <hr align="left" className="section-hr" />
             <p className="about-text">
               Hey there! I’m Landon — husband, dad of three awesome kids,
               veteran, Christian, and lifelong dog lover. I started Scooper Co.
@@ -762,7 +782,7 @@ const App = () => {
                     <img
                       width="40"
                       height="40"
-                      src="/images/grass.png"
+                      src="/public/images/grass.png"
                       alt="grass"
                     />
                     <br />
@@ -778,7 +798,7 @@ const App = () => {
                     <img
                       width="60"
                       height="60"
-                      src="/images/grass.png"
+                      src="/public/images/grass.png"
                       alt="grass"
                     />
                     <br />
@@ -794,7 +814,7 @@ const App = () => {
                     <img
                       width="80"
                       height="80"
-                      src="/images/grass.png"
+                      src="/public/images/grass.png"
                       alt="grass"
                     />
                     <br />
@@ -832,7 +852,7 @@ const App = () => {
               <div className="error-message">
                 <p>
                   There was an issue sending your request. Please try again
-                  later or contact us directly at jbakerbba@gmail.com.
+                  later or contact us directly at Thescooperco@gmail.com.
                 </p>
               </div>
             )}
