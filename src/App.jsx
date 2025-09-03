@@ -309,6 +309,12 @@ const App = () => {
           .about-text-content {
               padding: 1rem;
           }
+
+          .about-logo {
+            width: 100px;
+            height: auto;
+            margin: 0 auto;
+          }
           
           .about-text {
               font-size: 1.125rem;
@@ -507,12 +513,14 @@ const App = () => {
           }
           
           /* Media Queries for responsiveness */
+
+          /* Tablet & up */
           @media (min-width: 768px) {
               .nav-bar {
                   padding: 1rem 3rem;
               }
               .hero-title {
-                  font-size: 3.75rem;
+                  font-size: 3rem;
               }
               .hero-subtitle {
                   font-size: 1.25rem;
@@ -523,16 +531,46 @@ const App = () => {
               .about-section {
                   flex-direction: row;
                   text-align: left;
+                  padding: 5rem 3rem;
               }
               .about-image-container {
                   width: 50%;
               }
               .about-text-content {
                   width: 50%;
+                  padding: 0 2rem;
               }
               .form-grid {
                   grid-template-columns: repeat(2, 1fr);
               }
+          }
+
+          /* Desktop & up */
+          @media (min-width: 1024px) {
+            .app-container {
+                max-width: 1440px;
+                margin: 0 auto;
+                padding: 0;
+            }
+            .hero-section {
+              text-align: left;
+            }
+            .hero-content {
+                padding: 0 6rem;
+            }
+            .hero-title {
+                font-size: 4rem;
+            }
+            .hero-subtitle {
+                font-size: 1.5rem;
+                max-width: 45rem;
+            }
+            .about-image {
+                width: 75%;
+            }
+            .about-logo {
+                width: 100px;
+            }
           }
         `}
       </style>
@@ -671,6 +709,11 @@ const App = () => {
               Let us handle the dirty work — so you can get back to enjoying
               your clean yard and your happy pup!
             </p>
+            <img
+              src="/images/landon-logo.png"
+              alt="Landon's personal logo"
+              className="about-logo"
+            />
           </div>
         </section>
 
@@ -783,7 +826,7 @@ const App = () => {
                       width="40"
                       height="40"
                       src="/images/grass.png"
-                      alt="grass"
+                      alt="small lawn"
                     />
                     <br />
                     <span className="yard-size-label">Small</span>
@@ -799,7 +842,7 @@ const App = () => {
                       width="60"
                       height="60"
                       src="/images/grass.png"
-                      alt="grass"
+                      alt="medium lawn"
                     />
                     <br />
                     <span className="yard-size-label">Medium</span>
@@ -815,7 +858,7 @@ const App = () => {
                       width="80"
                       height="80"
                       src="/images/grass.png"
-                      alt="grass"
+                      alt="large lawn"
                     />
                     <br />
                     <span className="yard-size-label">Large</span>
